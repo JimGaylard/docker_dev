@@ -1,20 +1,15 @@
 FROM ubuntu:latest
 MAINTAINER Jim Gaylard <jim@jimgaylard.com>
 
-RUN apt-get update
-RUN apt-get install \
+RUN apt-get -y -qq update
+RUN apt-get -y -qq install \
     build-essential \
     openssl \
     libreadline6 \
     libreadline6-dev \
     curl \
-    git-core \
-    zlib1g \
-    zlib1g-dev \
     libssl-dev \
     libyaml-dev \
-    libsqlite3-dev \
-    sqlite3 \
     libxml2-dev \
     libxslt-dev \
     autoconf \
@@ -23,8 +18,7 @@ RUN apt-get install \
     automake \
     libtool \
     bison \
-    nodejs \
-    subversion
+    nodejs
 
 
 ADD tmp/ruby-2.1.2.tar.gz /tmp/
